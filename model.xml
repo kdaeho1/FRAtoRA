@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<register-automaton>
+	<alphabet>
+		<inputs>
+			<symbol name="ILoadRegisters"/>
+			<symbol name="IDummy"/>
+			<symbol name="IKnownInput">
+				<param type="int" name="p0"/>
+				<param type="int" name="p1"/>
+			</symbol>
+			<symbol name="IKnownOutput">
+				<param type="int" name="p0"/>
+				<param type="int" name="p1"/>
+			</symbol>
+			<symbol name="IFreshInput">
+				<param type="int" name="p0"/>
+				<param type="int" name="p1"/>
+			</symbol>
+			<symbol name="IFreshOutput">
+				<param type="int" name="p0"/>
+				<param type="int" name="p1"/>
+			</symbol>
+			<symbol name="OFreshOutput">
+				<param type="int" name="out"/>
+			</symbol>
+		</inputs>
+		<outputs>
+			<symbol name="OOK"/>
+		</outputs>
+	</alphabet>
+	<constants>const int zero = 0</constants>
+	<globals>
+		<variable type="int" name="r1">0</variable>
+		<variable type="int" name="r2">0</variable>
+		<variable type="int" name="r3">0</variable>
+		<variable type="int" name="r4">0</variable>
+		<variable type="int" name="x">0</variable>
+		<variable type="int" name="y">0</variable>
+	</globals>
+	<locations>
+		<location name="id0"/>
+		<location name="id1"/>
+		<location name="id2"/>
+		<location name="id3"/>
+		<location name="id4"/>
+		<location name="id5"/>
+		<location name="id6"/>
+		<location name="id7"/>
+		<location name="id8"/>
+		<location name="id9"/>
+		<location name="id10"/>
+		<location name="id11"/>
+		<location name="id12"/>
+		<location name="id13"/>
+		<location name="id14"/>
+		<location name="id15"/>
+		<location name="id16"/>
+		<location name="id17"/>
+		<location name="id18"/>
+		<location name="id19"/>
+		<location name="id20"/>
+		<location name="id21"/>
+		<location name="id10000" initial="true"/>
+	</locations>
+	<transitions>
+		<transition from="id10000" to="id0" symbol="ILoadRegisters">
+			<assignments>
+				<assign to="r1">0</assign>
+				<assign to="r2">0</assign>
+				<assign to="r3">0</assign>
+				<assign to="r4">0</assign>
+			</assignments>
+		</transition>
+		<transition from="id0" to="id10000" symbol="OOK"/>
+		<transition from="id10" to="id10" symbol="IDummy"/>
+		<transition from="id11" to="id11" symbol="IDummy"/>
+		<transition from="id12" to="id12" symbol="IDummy"/>
+		<transition from="id13" to="id13" symbol="IDummy"/>
+		<transition from="id14" to="id14" symbol="IDummy"/>
+		<transition from="id15" to="id15" symbol="IDummy"/>
+		<transition from="id16" to="id16" symbol="IDummy"/>
+		<transition from="id17" to="id17" symbol="IDummy"/>
+		<transition from="id18" to="id18" symbol="IDummy"/>
+		<transition from="id19" to="id19" symbol="IDummy"/>
+		<transition from="id20" to="id20" symbol="IDummy"/>
+		<transition from="id21" to="id21" symbol="IDummy"/>
+		<transition from="id0" to="id1" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id1" to="id0" symbol="OOK"/>
+		<transition from="id0" to="id2" symbol="IFreshInput" params="x,y">
+			<guard>x==r1</guard>
+			<assignments>
+				<assign to="r2">y</assign>
+			</assignments>
+		</transition>
+		<transition from="id2" to="id0" symbol="OOK"/>
+		<transition from="id1" to="id0" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id0" to="id1" symbol="OOK"/>
+		<transition from="id1" to="id3" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id3" to="id1" symbol="OOK"/>
+		<transition from="id1" to="id4" symbol="IFreshInput" params="x,y">
+			<guard>x==r1</guard>
+			<assignments>
+				<assign to="r2">y</assign>
+			</assignments>
+		</transition>
+		<transition from="id4" to="id1" symbol="OOK"/>
+		<transition from="id1" to="id1" symbol="IDummy"/>
+		<transition from="id2" to="id0" symbol="IKnownInput" params="x,y">
+			<guard>x==r2 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id0" to="id2" symbol="OOK"/>
+		<transition from="id2" to="id4" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id4" to="id2" symbol="OOK"/>
+		<transition from="id2" to="id5" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id5" to="id2" symbol="OOK"/>
+		<transition from="id2" to="id6" symbol="IFreshInput" params="x,y">
+			<guard>x==r1</guard>
+			<assignments>
+				<assign to="r3">y</assign>
+			</assignments>
+		</transition>
+		<transition from="id6" to="id2" symbol="OOK"/>
+		<transition from="id3" to="id1" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id1" to="id3" symbol="OOK"/>
+		<transition from="id3" to="id7" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id7" to="id3" symbol="OOK"/>
+		<transition from="id3" to="id8" symbol="IFreshInput" params="x,y">
+			<guard>x==r1</guard>
+			<assignments>
+				<assign to="r2">y</assign>
+			</assignments>
+		</transition>
+		<transition from="id8" to="id3" symbol="OOK"/>
+		<transition from="id3" to="id3" symbol="IDummy"/>
+		<transition from="id4" to="id2" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id2" to="id4" symbol="OOK"/>
+		<transition from="id4" to="id1" symbol="IKnownInput" params="x,y">
+			<guard>x==r2 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id1" to="id4" symbol="OOK"/>
+		<transition from="id4" to="id8" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id8" to="id4" symbol="OOK"/>
+		<transition from="id4" to="id9" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id9" to="id4" symbol="OOK"/>
+		<transition from="id4" to="id10" symbol="IFreshInput" params="x,y">
+			<guard>x==r1</guard>
+			<assignments>
+				<assign to="r3">y</assign>
+			</assignments>
+		</transition>
+		<transition from="id10" to="id4" symbol="OOK"/>
+		<transition from="id4" to="id4" symbol="IDummy"/>
+		<transition from="id5" to="id2" symbol="IKnownInput" params="x,y">
+			<guard>x==r2 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id2" to="id5" symbol="OOK"/>
+		<transition from="id5" to="id9" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id9" to="id5" symbol="OOK"/>
+		<transition from="id5" to="id11" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id11" to="id5" symbol="OOK"/>
+		<transition from="id5" to="id12" symbol="IFreshInput" params="x,y">
+			<guard>x==r1</guard>
+			<assignments>
+				<assign to="r3">y</assign>
+			</assignments>
+		</transition>
+		<transition from="id12" to="id5" symbol="OOK"/>
+		<transition from="id6" to="id13" symbol="IKnownInput" params="x,y">
+			<guard>x==r2 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id13" to="id6" symbol="OOK"/>
+		<transition from="id6" to="id2" symbol="IKnownInput" params="x,y">
+			<guard>x==r3 &amp;&amp; y==r3</guard>
+		</transition>
+		<transition from="id2" to="id6" symbol="OOK"/>
+		<transition from="id6" to="id10" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id10" to="id6" symbol="OOK"/>
+		<transition from="id6" to="id12" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id12" to="id6" symbol="OOK"/>
+		<transition from="id6" to="id14" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r3</guard>
+		</transition>
+		<transition from="id14" to="id6" symbol="OOK"/>
+		<transition from="id6" to="id15" symbol="IFreshInput" params="x,y">
+			<guard>x==r1</guard>
+			<assignments>
+				<assign to="r4">y</assign>
+			</assignments>
+		</transition>
+		<transition from="id15" to="id6" symbol="OOK"/>
+		<transition from="id7" to="id3" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id3" to="id7" symbol="OOK"/>
+		<transition from="id7" to="id16" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id16" to="id7" symbol="OOK"/>
+		<transition from="id7" to="id17" symbol="IFreshInput" params="x,y">
+			<guard>x==r1</guard>
+			<assignments>
+				<assign to="r2">y</assign>
+			</assignments>
+		</transition>
+		<transition from="id17" to="id7" symbol="OOK"/>
+		<transition from="id7" to="id7" symbol="IDummy"/>
+		<transition from="id8" to="id4" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id4" to="id8" symbol="OOK"/>
+		<transition from="id8" to="id3" symbol="IKnownInput" params="x,y">
+			<guard>x==r2 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id3" to="id8" symbol="OOK"/>
+		<transition from="id8" to="id17" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id17" to="id8" symbol="OOK"/>
+		<transition from="id8" to="id18" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id18" to="id8" symbol="OOK"/>
+		<transition from="id8" to="id19" symbol="IFreshInput" params="x,y">
+			<guard>x==r1</guard>
+			<assignments>
+				<assign to="r3">y</assign>
+			</assignments>
+		</transition>
+		<transition from="id19" to="id8" symbol="OOK"/>
+		<transition from="id8" to="id8" symbol="IDummy"/>
+		<transition from="id9" to="id5" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id5" to="id9" symbol="OOK"/>
+		<transition from="id9" to="id4" symbol="IKnownInput" params="x,y">
+			<guard>x==r2 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id4" to="id9" symbol="OOK"/>
+		<transition from="id9" to="id18" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r1</guard>
+		</transition>
+		<transition from="id18" to="id9" symbol="OOK"/>
+		<transition from="id9" to="id20" symbol="IKnownInput" params="x,y">
+			<guard>x==r1 &amp;&amp; y==r2</guard>
+		</transition>
+		<transition from="id20" to="id9" symbol="OOK"/>
+		<transition from="id9" to="id21" symbol="IFreshInput" params="x,y">
+			<guard>x==r1</guard>
+			<assignments>
+				<assign to="r3">y</assign>
+			</assignments>
+		</transition>
+		<transition from="id21" to="id9" symbol="OOK"/>
+		<transition from="id9" to="id9" symbol="IDummy"/>
+	</transitions>
+</register-automaton>
